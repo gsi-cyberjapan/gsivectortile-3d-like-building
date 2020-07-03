@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>3D like building map</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='./mapbox/1.8.1/mapbox-gl.js'></script>
+<link href='./mapbox/1.8.1/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { margin:0; padding:0; }
+#map {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+</style>
+<style>
+#menu {
+    position: absolute;
+    left: 0.5em;
+    top: 0.5em; 
+    padding: 0.2em 0.5em;
+    margin: 0 0;
+    background: #ffffffcc;
+    border: solid 1px #aaa;
+    border-radius: 3px;
+    font-family: "Open Sans", sans-serif;
+    height: auto;
+    min-width: 150px;
+}
+#features {
+    position: absolute;
+    left: 0.5em;
+    padding: 0.5em 0.5em;
+    top: 8em; 
+    max-height: 200px;
+    width: 90%;
+    max-width: 350px;
+    overflow: auto;
+    background: #ddeeff;
+    font-family: 'Open Sans', sans-serif;
+    word-wrap: break-word;
+}
+button.c1 {
+    display: block;
+    text-align:center;
+    background: #ddd;
+    padding 0 0.5em 0 0.5em;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    margin: 5px 0px 5px 0px;
+    line-height: 1.5em;
+    font-size: 1em;
+    width: 100%;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+ 
+<div id='map'></div>
+<div id='menu'>
+  <button type="button" class="c1" name="std" onclick="setstylestd()">標準地図</button>
+  <button type="button" class="c1" name="photo" onclick="setstylephoto()">写真＋注記</button>
+  <button type="button" class="c1" name="photo" onclick="setstyledark()">ダークモード風</button>
+</div>
+
+<script>
+var map = new mapboxgl.Map({
+  container: 'map',
+  hash: true,
+  style: './building3d.json',
+  center: [139.762529,35.680757],
+  zoom: 15,
+  minZoom: 4,
+  maxZoom: 17.99,
+  bearing: -40,
+  pitch: 60,
+  doubleClickZoom: false,
+  localIdeographFontFamily: false
+});
+
+//UI
+map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+map.addControl(new mapboxgl.ScaleControl());
+map.showTileBoundaries = false;
+map.showCollisionBoxes = false;
+
+//地図切替え
+var setstylestd = function(){
+  map.setStyle('./building3d.json');
+}
+var setstylephoto = function(){
+  map.setStyle('./building3dphoto.json');
+}
+var setstyledark = function(){
+  map.setStyle('./building3ddark.json');
+}
+
+</script>
+ 
+</body>
+</html>
