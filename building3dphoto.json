@@ -18,7 +18,7 @@
       "attribution": "<a href='https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto' target='_blank'>地理院タイル</a>"
     }
 }, 
-"sprite": "https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/sprite/std", 
+"sprite": "https://gsi-cyberjapan.github.io/gsivectortile-3d-like-building/sprite/std", 
 "glyphs": "https://cyberjapandata.gsi.go.jp/xyz/noto-jp/{fontstack}/{range}.pbf",
 "layers": [
     {

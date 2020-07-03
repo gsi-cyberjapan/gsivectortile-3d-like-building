@@ -1,7 +1,7 @@
 {
     "version": 8,
     "name": "Vector",
-    "sprite": "https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/sprite/pale",
+    "sprite": "https://gsi-cyberjapan.github.io/gsivectortile-3d-like-building/sprite/pale",
     "glyphs": "https://cyberjapandata.gsi.go.jp/xyz/noto-jp/{fontstack}/{range}.pbf",
     "sources": {
         "gsibv-vectortile-source-1-4-16": {
